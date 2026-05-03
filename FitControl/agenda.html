@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda - FitControl</title>
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="logo-area">
+      <h2>FitControl</h2>
+      <button class="close-btn" id="closeMenu">
+        <i class='bx bx-x'></i>
+      </button>
+    </div>
+
+    <nav>
+      <a href="dashboard.html"><i class='bx bxs-dashboard'></i> Dashboard</a>
+      <a href="alunos.html"><i class='bx bxs-user'></i> Alunos</a>
+      <a href="professores.html"><i class='bx bxs-id-card'></i> Professores</a>
+      <a href="planos.html"><i class='bx bxs-wallet'></i> Planos</a>
+      <a href="matriculas.html"><i class='bx bxs-user-check'></i> Matrículas</a>
+      <a href="pagamentos.html"><i class='bx bxs-credit-card'></i> Pagamentos</a>
+      <a href="presenca.html"><i class='bx bxs-calendar'></i> Presença</a>
+      <a href="treinos.html"><i class='bx bxs-dumbbell'></i> Treinos</a>
+      <a href="agenda.html" class="active-link"><i class='bx bxs-time'></i> Agenda</a>
+      <a href="relatorios.html"><i class='bx bxs-bar-chart-alt-2'></i> Relatórios</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <header class="header">
+      <div class="header-left">
+        <button class="menu-btn" id="openMenu">
+          <i class='bx bx-menu'></i>
+        </button>
+        <h1>Agenda de Aulas</h1>
+      </div>
+
+      <div class="user">
+        <i class='bx bxs-user-circle'></i>
+        <span>Admin</span>
+      </div>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <i class='bx bxs-calendar-event'></i>
+        <div>
+          <h3>Aulas Hoje</h3>
+          <p>12</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class='bx bxs-user-voice'></i>
+        <div>
+          <h3>Professores</h3>
+          <p>6</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class='bx bxs-group'></i>
+        <div>
+          <h3>Vagas Totais</h3>
+          <p>156</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class='bx bxs-hot'></i>
+        <div>
+          <h3>Aula Mais Procurada</h3>
+          <p>Zumba</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <h2>Agenda de Aulas</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome da Aula</th>
+              <th>Professor</th>
+              <th>Horário</th>
+              <th>Quantidade de Vagas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Musculação Funcional</td>
+              <td>Ricardo Alves</td>
+              <td>06:00 às 07:00</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>Spinning</td>
+              <td>Fernanda Rocha</td>
+              <td>08:00 às 09:00</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>Zumba</td>
+              <td>Patrícia Lima</td>
+              <td>18:00 às 19:00</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>Yoga</td>
+              <td>Camila Torres</td>
+              <td>19:30 às 20:30</td>
+              <td>18</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+
+  <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+  <script src="./js/agenda.js"></script>
+
+  
+</body>
+</html>

@@ -1,0 +1,66 @@
+const tipoUsuario = localStorage.getItem("tipoUsuario");
+
+if (tipoUsuario !== "admin") {
+  alert("Acesso permitido apenas para administradores.");
+  window.location.href = "index.html";
+}
+
+const openMenu = document.getElementById("openMenu");
+const closeMenu = document.getElementById("closeMenu");
+const sidebar = document.getElementById("sidebar");
+const tabelaAlunos = document.getElementById("tabelaAlunos");
+
+if (openMenu) openMenu.addEventListener("click", () => sidebar.classList.add("show"));
+if (closeMenu) closeMenu.addEventListener("click", () => sidebar.classList.remove("show"));
+
+const alunos = JSON.parse(localStorage.getItem("alunos")) || [];
+const matriculas = JSON.parse(localStorage.getItem("matriculas")) || [];
+const pagamentos = JSON.parse(localStorage.getItem("pagamentos")) || [];
+const treinos = JSON.parse(localStorage.getItem("treinos")) || [];
+
+const totalAlunosCard = document.getElementById("totalAlunosCard");
+const totalMatriculas = document.getElementById("totalMatriculas");
+const totalPendentes = document.getElementById("totalPendentes");
+const totalTreinos = document.getElementById("totalTreinos");
+
+if (totalAlunosCard) totalAlunosCard.textContent = alunos.length;
+if (totalMatriculas) totalMatriculas.textContent = matriculas.filter(m => m.status === "Ativa").length;
+if (totalPendentes) totalPendentes.textContent = pagamentos.filter(p => p.status !== "Pago").length;
+if (totalTreinos) totalTreinos.textContent = treinos.length;
+
+if (tabelaAlunos) {
+  if (alunos.length === 0) {
+    tabelaAlunos.innerHTML = `<tr><td colspan="4">Nenhum aluno cadastrado ainda.</td></tr>`;
+  } else {
+    tabelaAlunos.innerHTML = alunos.slice(-5).reverse().map(aluno => `
+      <tr>
+        <td>${aluno.nome}</td>
+        <td>${aluno.email}</td>
+        <td>${aluno.telefone}</td>
+        <td>${aluno.cpf || "-"}</td>
+      </tr>
+    `).join("");
+  }
+}
+
+const matriculasCtx = document.getElementById("matriculasChart");
+if (matriculasCtx) {
+  new Chart(matriculasCtx, {
+    type: "line",
+    data: {
+      labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+      datasets: [{ label: "Matrículas", data: [180, 195, 210, 225, 248, 265], borderWidth: 3, fill: true, tension: 0.3 }]
+    }
+  });
+}
+
+const planosCtx = document.getElementById("planosChart");
+if (planosCtx) {
+  new Chart(planosCtx, {
+    type: "bar",
+    data: {
+      labels: ["Mensal", "Trimestral", "Semestral", "Anual"],
+      datasets: [{ label: "Planos vendidos", data: [45, 30, 15, 10], borderWidth: 1 }]
+    }
+  });
+}
