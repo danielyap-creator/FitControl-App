@@ -44,3 +44,8 @@ form.addEventListener("submit", function(event) {
         alert("Usuário ou senha inválidos.");
     }
 });
+
+function sair() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "index.html";
+}

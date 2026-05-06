@@ -24,6 +24,7 @@
       <a href="treinos.html"><i class='bx bxs-dumbbell'></i> Treinos</a>
       <a href="agenda.html"><i class='bx bxs-time'></i> Agenda</a>
       <a href="relatorios.html"><i class='bx bxs-bar-chart-alt-2'></i> Relatórios</a>
+      <a href="#" onclick="sair()"><i class='bx bx-log-out'></i> Sair</a>
     </nav>
   </aside>
 
@@ -43,7 +44,12 @@
       <form id="formMatricula" class="form-aluno">
         <div class="form-grid">
           <select id="alunoMatricula" required><option value="">Selecione o aluno</option></select>
-          <select id="planoMatricula" required><option value="">Selecione o plano</option></select>
+          <select id="plano" required>
+               <option value="">Selecione o plano</option>
+               <option value="Mensal">Mensal</option>
+               <option value="Semestral">Semestral</option>
+               <option value="Anual">Anual</option>
+          </select>
           <input type="date" id="dataInicio" title="Data de início" required>
           <input type="date" id="dataFim" title="Data de fim" required>
           <select id="statusMatricula" required><option value="Ativa">Ativa</option><option value="Encerrada">Encerrada</option><option value="Cancelada">Cancelada</option></select>
