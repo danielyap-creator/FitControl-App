@@ -44,23 +44,56 @@ if (tabelaAlunos) {
 }
 
 const matriculasCtx = document.getElementById("matriculasChart");
+
 if (matriculasCtx) {
   new Chart(matriculasCtx, {
     type: "line",
     data: {
       labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
-      datasets: [{ label: "Matrículas", data: [180, 195, 210, 225, 248, 265], borderWidth: 3, fill: true, tension: 0.3 }]
+      datasets: [{
+        label: "Matrículas",
+        data: [180, 195, 210, 225, 248, 265],
+
+        borderWidth: 3,
+        fill: true,
+        tension: 0.3,
+
+        borderColor: "#a855f7",
+        backgroundColor: "rgba(168, 85, 247, 0.2)",
+
+        pointBackgroundColor: "#c084fc",
+        pointBorderColor: "#ffffff",
+        pointRadius: 5
+      }]
     }
   });
 }
 
 const planosCtx = document.getElementById("planosChart");
+
 if (planosCtx) {
   new Chart(planosCtx, {
     type: "bar",
     data: {
-      labels: ["Mensal", "Trimestral", "Semestral", "Anual"],
-      datasets: [{ label: "Planos vendidos", data: [45, 30, 15, 10], borderWidth: 1 }]
+      labels: ["Mensal", "Semestral", "Anual"],
+      datasets: [{
+        label: "Planos vendidos",
+        data: [45, 15, 10],
+
+        borderWidth: 1,
+
+        backgroundColor: [
+          "#7c3aed",
+          "#a855f7",
+          "#c084fc"
+        ],
+
+        borderColor: [
+          "#7c3aed",
+          "#a855f7",
+          "#c084fc"
+        ]
+      }]
     }
   });
 }

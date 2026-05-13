@@ -10,9 +10,14 @@
 <body>
   <aside class="sidebar" id="sidebar">
     <div class="logo-area">
-      <h2>FitControl</h2>
-      <button class="close-btn" id="closeMenu"><i class='bx bx-x'></i></button>
-    </div>
+
+    <h2>FitControl</h2>
+
+    <button class="close-btn" id="closeMenu">
+        <i class='bx bx-x'></i>
+    </button>
+
+</div>
     <nav>
       <a href="dashboard.html"><i class='bx bxs-dashboard'></i> Dashboard</a>
       <a href="alunos.html"><i class='bx bxs-user'></i> Alunos</a>
@@ -21,10 +26,9 @@
       <a href="matriculas.html"><i class='bx bxs-user-check'></i> Matrículas</a>
       <a href="pagamentos.html"><i class='bx bxs-credit-card'></i> Pagamentos</a>
       <a href="presenca.html"><i class='bx bxs-calendar'></i> Presença</a>
-      <a href="treinos.html" class="active-link"><i class='bx bxs-dumbbell'></i> Treinos</a>
-      <a href="agenda.html"><i class='bx bxs-time'></i> Agenda</a>
+      <a href="treinos.html" class="active-link"><i class='bx bx-dumbbell'></i><span>Treinos</span></a>
       <a href="relatorios.html"><i class='bx bxs-bar-chart-alt-2'></i> Relatórios</a>
-      <a href="#" onclick="sair()"><i class='bx bx-log-out'></i> Sair</a>
+    
     </nav>
   </aside>
 
@@ -54,7 +58,10 @@
       </form>
     </section>
     <section class="table-section" style="margin-top:20px;">
-      <h2>Treinos Cadastrados</h2><div class="table-wrapper"><table><thead><tr><th>Aluno</th><th>Professor</th><th>Treino</th><th>Data</th><th>Exercícios</th></tr></thead><tbody id="listaTreinos"></tbody></table></div>
+      <div class="titulo-treino">
+    <i class='bx bx-heart-circle'></i>
+    <h2>Treinos Cadastrados</h2>
+</div><div class="table-wrapper"><table><thead><tr><th>Aluno</th><th>Professor</th><th>Treino</th><th>Data</th><th>Exercícios</th></tr></thead><tbody id="listaTreinos"></tbody></table></div>
     </section>
   </main>
 
